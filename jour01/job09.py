@@ -17,13 +17,13 @@ class Produit() :
     def get_TVA(self) : 
         return self.TVA
     def set_TVA(self, new_TVA) : 
-        self.prixHT = new_TVA
+        self.TVA = new_TVA
 
     def CalculerPrixTTC(self) : 
         return self.prixHT * (1+self.TVA)
     
     def __str__(self) : 
-        return f"{self.nom} qui coute {self.prixHT}€ hors taxe, donc {self.CalculerPrixTTC()}€ après une TVA de {self.TVA * 100}%"
+        return f"{self.nom} qui coute {self.prixHT}€ hors taxe, donc {self.CalculerPrixTTC():.2f}€ après une TVA de {self.TVA * 100}%"
 
 un_objet = Produit("T-shirt", 15, 0.2)
 un_plat_au_restaurant = Produit("Entrecôte", 17, 0.1)
@@ -41,5 +41,6 @@ print(f"Le nouveau prix du plat est {un_plat_au_restaurant.get_prixHT()}€")
 
 un_aliment.set_nom("Un plat préparé")
 un_aliment.set_prixHT(4)
-un_aliment.set_TVA(10)
+un_aliment.set_TVA(0.1)
+print(f"La nouvelle TVA de l'aliment est {un_aliment.get_TVA()*10}%")
 print(un_aliment)
