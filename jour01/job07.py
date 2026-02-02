@@ -17,6 +17,7 @@ class Personnage() :
 
     def position(self) : 
         print(f"La position du joueur est ({self.x}, {self.y})")
+        return (self.x, self.Y)
 
 joueur = Personnage(2,3)
 
