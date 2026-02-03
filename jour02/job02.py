@@ -21,3 +21,19 @@ class Livre() :
             self.__nb_pages = new_nb_pages
         else : 
             print("Le nombre de pages doit être un entier positif")
+
+mon_livre = Livre("Une histoire", "Un auteur", 250)
+
+print(mon_livre.get_titre())
+print(mon_livre.get_auteur())
+print(mon_livre.get_nb_pages())
+
+mon_livre.set_titre("Harry Potter")
+mon_livre.set_auteur("J.K. Rowling la transphobe")
+mon_livre.set_nb_pages(-800)
+mon_livre.set_nb_pages("blabla")
+mon_livre.set_nb_pages(430)
+
+print(mon_livre.get_titre())
+print(mon_livre.get_auteur())
+print(mon_livre.get_nb_pages())
