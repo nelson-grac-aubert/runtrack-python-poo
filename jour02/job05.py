@@ -14,7 +14,7 @@
 # méthode demarrer. Si la valeur du réservoir est supérieure à 5 la voiture peut
 # démarrer.
 
-class Car() : 
+class Car : 
     def __init__(self, brand, model, year, distance) :
         self.__brand = brand
         self.__model = model
