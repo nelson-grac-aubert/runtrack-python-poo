@@ -22,7 +22,7 @@ class Produit() :
     def CalculerPrixTTC(self) : 
         return self.prixHT * (1+self.TVA)
     
-    def __str__(self) : 
+    def __repr__(self) : 
         return f"{self.nom} qui coute {self.prixHT}€ hors taxe, donc {self.CalculerPrixTTC():.2f}€ après une TVA de {self.TVA * 100}%"
 
 un_objet = Produit("T-shirt", 15, 0.2)

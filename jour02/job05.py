@@ -26,7 +26,7 @@ class Car :
     def set_tank(self, new_tank) : 
         self.__tank = new_tank
 
-    def __get_tank__(self) : 
+    def __get_tank(self) : 
         return self.__tank
 
     def get_running(self) : 
@@ -34,7 +34,7 @@ class Car :
 
     def start(self) :
         if self.get_running() == False : 
-            if self.__get_tank__() > 5 : 
+            if self.__get_tank() > 5 : 
                 self.__running = True
             else : 
                 print("Not enough gas to start engine")

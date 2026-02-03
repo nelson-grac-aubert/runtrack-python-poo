@@ -4,7 +4,7 @@ class Student :
         self.__first_name = first_name
         self.__id = id 
         self.__credits = 0
-        self.__level = self.__studentEval__()
+        self.__level = self.__studentEval()
 
     def get_last_name(self) : 
         return self.__last_name
@@ -21,7 +21,7 @@ class Student :
     def get_level(self) : 
         return self.__level
     def set_level(self) : 
-        self.__level = self.__studentEval__()
+        self.__level = self.__studentEval()
     
     def add_credits(self, amount) : 
         if type(amount) == int and amount > 0 : 
@@ -29,7 +29,7 @@ class Student :
         else : 
             print("The amount of credits added must be a positive integer")
 
-    def __studentEval__(self) : 
+    def __studentEval(self) : 
         if self.__credits >= 90 : 
             return "Excellent"
         elif 90 > self.__credits >= 80 : 

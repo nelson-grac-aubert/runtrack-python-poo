@@ -27,13 +27,14 @@ class Order :
         return self.__status
     def __set_status__(self, new_status) : 
         self.__status = new_status
+        # self.get_status() = new_status
 
     def get_dishes(self) : 
         return self.__dishes
-    def __add_dish__(self, new_dish_name, new_dish_price) : 
+    def add_dish(self, new_dish_name, new_dish_price) : 
         self.__dishes[new_dish_name] = new_dish_price
 
-    def __cancel_order__(self) : 
+    def cancel_order(self) : 
         if self.get_status() == "Pending" : 
             self.__set_status__("Cancelled")
         elif self.get_status() == "Pending" : 
@@ -44,13 +45,13 @@ class Order :
     def __get_total__(self) : 
         return sum(self.get_dishes().values())
     
-    def __calculate_taxes__(self) : 
+    def __calculate_taxes(self) : 
         return self.__get_total__() * 0.1
     
-    def __calculate_total_with_taxes__(self ) : 
-        return self.__get_total__() + self.__calculate_taxes__()
+    def __calculate_total_with_taxes(self) : 
+        return self.__get_total__() + self.__calculate_taxes()
     
-    def __the_ultimate_recap__(self) : 
+    def the_ultimate_recap(self) : 
 
         print(f"Order ID : {self.get_id()}")
         print(f"Order status : {self.get_status()}")
@@ -59,28 +60,21 @@ class Order :
             print(f"{key} that costs {self.get_dishes()[key]} €")
 
         print(f"Total excluding taxes : {self.__get_total__()}")
-        print(f"Tax : {self.__calculate_taxes__()}")
-        print(f"Please pay : {self.__calculate_total_with_taxes__()}")
+        print(f"Tax : {self.__calculate_taxes()}")
+        print(f"Please pay : {self.__calculate_total_with_taxes()}")
     
 my_order = Order("01", {"A salad" : 9, "A meat" : 17, "A dessert" : 5}, "Pending")
 
 # Add a dish to the order 
-my_order.__add_dish__("A glass of wine", 4)
+my_order.add_dish("A glass of wine", 4)
 print(my_order.get_dishes())
 
-# Calculate order total price
-print(my_order.__get_total__())
 
 # Cancel the order
 print(my_order.get_status())
-my_order.__cancel_order__()
+my_order.cancel_order()
 print(my_order.get_status())
-
-# Calcultate 10% tax 
-print(my_order.__calculate_taxes__())
-# Calculate total with tax
-print(my_order.__calculate_total_with_taxes__())
 
 print("\n -------------------------------------------- \n")
 
-my_order.__the_ultimate_recap__()
+my_order.the_ultimate_recap()
