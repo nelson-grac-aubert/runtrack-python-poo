@@ -16,20 +16,21 @@
 # - Myrtille, 4 ans, habitant à Paris.
 # - Chloé, 18 ans, habitant à Marseille.
 
-# _1
-
 # Afficher le nombre d’habitants de Paris et de Marseille après l’arrivée de ces
 # nouvelles personnes.
 
 class Town() : 
     def __init__(self, name, inhabitants_count) : 
         self.__name = name
-        self.inhabitants_count = inhabitants_count
+        self.__inhabitants_count = inhabitants_count
 
     def get_name(self):
         return self.__name
+    
     def get_inhabitants_count(self):
-        return self.inhabitants_count
+        return self.__inhabitants_count
+    def add_inhabitant(self) : 
+        self.__inhabitants_count += 1 
 
 class Person() : 
     def __init__(self, name, age, town) : 
@@ -39,18 +40,17 @@ class Person() :
         self.add_population()
 
     def add_population(self) : 
-        self.__town.inhabitants_count += 1
-
+        self.__town.add_inhabitant()
+        
 shit_city = Town("Paris", 1000000)
 best_city = Town("Marseille", 861635)
 
 print(f"Number of inhabitants in {shit_city.get_name()} : {shit_city.get_inhabitants_count()}")
 print(f"Number of inhabitants in {best_city.get_name()} : {best_city.get_inhabitants_count()}")
 
-
 person_1 = Person("John", 45, shit_city)
-person_1 = Person("Myrtille", 4, shit_city)
-person_1 = Person("Chloé", 18, best_city)
+person_2 = Person("Myrtille", 4, shit_city)
+person_3 = Person("Chloé", 18, best_city)
 
 print(f"Updated number of inhabitants in {shit_city.get_name()} : {shit_city.get_inhabitants_count()}")
 print(f"Updated number of inhabitants in {best_city.get_name()} : {best_city.get_inhabitants_count()}")
