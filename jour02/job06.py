@@ -20,12 +20,12 @@ class Order :
 
     def get_id(self) : 
         return self.__id
-    def __set_id__(self, new_id) : 
+    def __set_id(self, new_id) : 
         self.__id = new_id
 
     def get_status(self) : 
         return self.__status
-    def __set_status__(self, new_status) : 
+    def __set_status(self, new_status) : 
         self.__status = new_status
         # self.get_status() = new_status
 
@@ -36,20 +36,20 @@ class Order :
 
     def cancel_order(self) : 
         if self.get_status() == "Pending" : 
-            self.__set_status__("Cancelled")
+            self.__set_status("Cancelled")
         elif self.get_status() == "Pending" : 
             print("Can't cancel an order that's delivered")
         elif self.get_status() == "Cancelled" : 
             print("Order was already cancelled")
     
-    def __get_total__(self) : 
+    def __get_total(self) : 
         return sum(self.get_dishes().values())
     
     def __calculate_taxes(self) : 
-        return self.__get_total__() * 0.1
+        return self.__get_total() * 0.1
     
     def __calculate_total_with_taxes(self) : 
-        return self.__get_total__() + self.__calculate_taxes()
+        return self.__get_total() + self.__calculate_taxes()
     
     def the_ultimate_recap(self) : 
 
@@ -59,7 +59,7 @@ class Order :
         for key in self.get_dishes() : 
             print(f"{key} that costs {self.get_dishes()[key]} €")
 
-        print(f"Total excluding taxes : {self.__get_total__()}")
+        print(f"Total excluding taxes : {self.__get_total()}")
         print(f"Tax : {self.__calculate_taxes()}")
         print(f"Please pay : {self.__calculate_total_with_taxes()}")
     
