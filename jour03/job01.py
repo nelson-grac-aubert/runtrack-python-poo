@@ -24,12 +24,12 @@
 class Town() : 
     def __init__(self, name, inhabitants_count) : 
         self.__name = name
-        self.__inhabitants_count = inhabitants_count
+        self.inhabitants_count = inhabitants_count
 
     def get_name(self):
         return self.__name
     def get_inhabitants_count(self):
-        return self.__inhabitants_count
+        return self.inhabitants_count
 
 class Person() : 
     def __init__(self, name, age, town) : 
@@ -39,8 +39,18 @@ class Person() :
         self.add_population()
 
     def add_population(self) : 
-        self.__town.__inhabitants_count += 1
+        self.__town.inhabitants_count += 1
 
-paris = Town("Paris", 1000000)
+shit_city = Town("Paris", 1000000)
+best_city = Town("Marseille", 861635)
 
-print(f"Number of inhabitants in {paris.get_name()} : {paris.get_inhabitants_count()}")
+print(f"Number of inhabitants in {shit_city.get_name()} : {shit_city.get_inhabitants_count()}")
+print(f"Number of inhabitants in {best_city.get_name()} : {best_city.get_inhabitants_count()}")
+
+
+person_1 = Person("John", 45, shit_city)
+person_1 = Person("Myrtille", 4, shit_city)
+person_1 = Person("Chloé", 18, best_city)
+
+print(f"Updated number of inhabitants in {shit_city.get_name()} : {shit_city.get_inhabitants_count()}")
+print(f"Updated number of inhabitants in {best_city.get_name()} : {best_city.get_inhabitants_count()}")
