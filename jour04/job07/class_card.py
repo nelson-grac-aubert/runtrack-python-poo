@@ -1,3 +1,6 @@
+from class_player import Player
+from class_dealer import Dealer
+
 class Card:
 
     def __init__(self, color, value): 
@@ -35,6 +38,7 @@ class Card:
         for key in values_dic : 
             if self.get_value() == key : 
                 self.__score = values_dic[key]
+                player.update_score(self.get_score())
         
         if self.get_value() == "ace" : 
             self.__score = player.draw_ace_behavior()

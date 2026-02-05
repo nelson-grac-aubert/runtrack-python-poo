@@ -6,6 +6,6 @@ class Dealer(Player) :
 
     def draw_ace_behavior(self):
         if self.get_score() <= 10 : 
-            return 11
+            self.update_score(11)
         else : 
-            return 1
+            self.update_score(1)

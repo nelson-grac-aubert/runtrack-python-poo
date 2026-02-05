@@ -35,4 +35,3 @@ class Deck:
         # Calculate its score automatically if "two"-"king", ask player input for "ace"
         choice.set_score(player)
         # Add the score to the player score
-        player.update_score(choice.get_score())

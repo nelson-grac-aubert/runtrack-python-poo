@@ -16,13 +16,13 @@ class Player :
     def draw_ace_behavior(self): 
         while True :
 
-            choice = input("You've drawn an ace : type 1 or 11 to determine its points :")
+            choice = input("\nYou've drawn an ace : type 1 or 11 to determine its points :\n")
 
             if choice != "11" and choice != "1" : 
                 print("Input error : only type 1 or 11")
             elif choice == "11" : 
-                self.__score = 11
+                self.__score += 11
                 break
             else : 
-                self.__score = 1 
+                self.__score += 1 
                 break
