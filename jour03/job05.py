@@ -107,6 +107,6 @@ class Game():
                     running = False
                     break
 
-                time.sleep(1)
+                time.sleep(2)
 
 current_game = Game()

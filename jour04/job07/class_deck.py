@@ -44,6 +44,6 @@ class Deck:
             print(f"The player's score is now {player.get_score()} points")
         else : 
             print("\nThe dealer has been dealt a card")
-        time.sleep(1)
+        time.sleep(2)
 
         
