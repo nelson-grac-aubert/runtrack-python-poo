@@ -1,17 +1,4 @@
 class Card:
-    
-    values_dic = {"two": 2,
-                "three": 3,
-                "four": 4, 
-                "five": 5,
-                "six": 6,
-                "seven": 7,
-                "eight": 8,
-                "nine": 9,
-                "ten": 10, 
-                "jack": 10,
-                "queen": 10,
-                "king": 10}
 
     def __init__(self, color, value): 
         self.__color = color
@@ -29,27 +16,30 @@ class Card:
 
     def get_score(self): 
         return self.__score
-    
-    def set_score(self, values_dic): 
+    def set_score(self, player): 
         """ Determine the points of a card depending on its printed value """
+
+        values_dic = {"two": 2,
+                    "three": 3,
+                    "four": 4, 
+                    "five": 5,
+                    "six": 6,
+                    "seven": 7,
+                    "eight": 8,
+                    "nine": 9,
+                    "ten": 10, 
+                    "jack": 10,
+                    "queen": 10,
+                    "king": 10}
 
         for key in values_dic : 
             if self.get_value() == key : 
                 self.__score = values_dic[key]
         
         if self.get_value() == "ace" : 
+            self.__score = player.draw_ace_behavior()
 
-            while True :
+    def __repr__(self): 
+        """ A human representation of what the card is """
 
-                choice = input("You've drawn an ace : type 1 or 11 to determine its points :")
-                
-                if choice != "11" and choice != "1" : 
-                    print("Input error : only type 1 or 11")
-                elif choice == "11" : 
-                    self.__score = 11
-                    break
-                else : 
-                    self.__score = 1 
-                    break
-                
-
+        return f"A {self.get_value()} of {self.get_color()}"                

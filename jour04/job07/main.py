@@ -20,3 +20,16 @@
 # cartes.
 
 # Créer toutes les méthodes nécessaires pour jouer une partie.
+
+from class_card import Card
+from class_deck import Deck
+from class_player import Player
+from class_game import Game
+
+game = Game()
+
+game.initialize()
+game.print_game_state()
+
+
+
