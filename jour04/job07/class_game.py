@@ -12,6 +12,8 @@ class Game() :
         self.deck = Deck() 
         self.player = Human()
         self.dealer = Dealer()
+        self.dealer_stopped_playing = False
+        self.player_stopped_playing = False
         print("\nA game has been started and will start soon, have fun :)")
         time.sleep(2)
 
@@ -22,8 +24,11 @@ class Game() :
         self.deck.deal(self.player)
         self.deck.deal(self.dealer)
 
+
     def play_turns(self) : 
-        while True : 
+
+        while self.game_end_conditions() == False :
+
             self.turn += 1 
 
             if self.turn %2 == 1 : 
@@ -31,13 +36,25 @@ class Game() :
                 if decision == "play" : 
                     self.deck.deal(self.player)
                 else : 
+                    self.player_stopped_playing = True
                     continue
             else : 
                 decision = self.dealer.next_turn_behavior()
                 if decision == "play" : 
                     self.deck.deal(self.dealer)
                 else : 
+                    self.dealer_stopped_playing = True
                     continue
+
+
+    def game_end_conditions(self) : 
+        if self.dealer_stopped_playing == True and self.player_stopped_playing == True : 
+            return True
+        if self.player.get_score() >= 21 : 
+            return True
+        if self.player.get_score() >= 21 : 
+            return True 
+        return False
 
     def loop(self): 
         self.first_deals()
