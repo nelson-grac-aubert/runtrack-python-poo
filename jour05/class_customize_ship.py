@@ -47,7 +47,7 @@ class CustomizeShip() :
         print("\n ----- Here are your next options -----")
         print("1 : add a part to your ship")
         print("2 : replace a part with another")
-        print("3 : change a piece completely")
+        print("3 : change a part's material")
         print("4 : display the current state of your ship")
 
         while True : 
