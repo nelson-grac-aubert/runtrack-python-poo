@@ -13,6 +13,8 @@ class Ship:
         """
         Add a new part to the ship that is self
 
+        :param self: The ship object targeted by this method
+        :type self: Ship
         :param new_part: The Part you want to add to your ship
         :type new_part: Part
         """
@@ -29,6 +31,8 @@ class Ship:
         """
         Replace a part (chosen by it's name attribute) by a new one.
         
+        :param self: The ship object targeted by this method
+        :type self: Ship
         :param replaced_part_name: Name attribute of the place you want to replace
         :type replaced_part_name: str
         :param new_part: Part object that will replace the named one
@@ -44,6 +48,8 @@ class Ship:
         """
         Replace a part's (chosen by it's name attribute) material.
         
+        :param self: The ship object targeted by this method
+        :type self: Ship
         :param part_name: Name attribute of the part whose material you want to change
         :type part_name: str
         :param new_material: New material for that part
