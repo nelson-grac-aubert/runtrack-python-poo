@@ -22,12 +22,14 @@ class Ship:
         for key in self.get_parts(): 
             if self.get_parts()[key].get_name() == replaced_part_name : 
                 self.get_parts()[key] = new_part
+                print(f"\n{replaced_part_name} has been replaced by {new_part}")
     
     def change_part(self, part_name : str, new_material : str): 
         """ Pick a current ship piece by its name and change its material """
         for key in self.get_parts():
             if self.get_parts()[key].get_name() == part_name : 
                 self.get_parts()[key].set_material(new_material)
+                print(f"{self.get_parts()[key].get_name()} is now made of {new_material}")
 
 
 

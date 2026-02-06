@@ -65,8 +65,6 @@ class CustomizeShip() :
         
         self.start_your_ship()
         time.sleep(2)
-        self.check_ship_state()
-        time.sleep(2)
 
         while True : 
             choice = self.get_user_choice()
