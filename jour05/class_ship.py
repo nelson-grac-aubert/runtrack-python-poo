@@ -20,9 +20,10 @@ class Ship:
     def replace_part(self, replaced_part_name : str, new_part : Part):
         """ Replace a part with a brand new one """
         for key in self.get_parts(): 
-            if self.get_parts()[key].get_name() == replaced_part_name : 
+            if self.get_parts()[key].get_name() == replaced_part_name :
+                old_part = self.get_parts()[key] 
                 self.get_parts()[key] = new_part
-                print(f"\n{replaced_part_name} has been replaced by {new_part}")
+                print(f"{old_part} has been replaced by {new_part}")
     
     def change_part(self, part_name : str, new_material : str): 
         """ Pick a current ship piece by its name and change its material """
