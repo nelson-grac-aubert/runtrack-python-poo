@@ -33,6 +33,7 @@
 
 from class_part import Part
 from class_ship import Ship
+from class_racing_ship import RacingShip
 
 part_1 = Part("Deck", "wood")
 print(part_1)
@@ -48,3 +49,7 @@ ship_1.display_state()
 ship_1.change_part("Sail", "stronger, thicker cloth")
 ship_1.display_state()
 
+racing_ship_part_1 = Part ("Massive 2000 horsepower gasoline motor", "plastic and metal")
+racing_ship_1 = RacingShip({"1" : part_1, "2": racing_ship_part_1}, 100)
+
+racing_ship_1.display_state()
