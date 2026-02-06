@@ -34,22 +34,25 @@
 from class_part import Part
 from class_ship import Ship
 from class_racing_ship import RacingShip
+from class_customize_boat import CustomizeShip
 
-part_1 = Part("Deck", "wood")
-print(part_1)
-part_2 = Part("Sail", "cloth")
-part_3 = Part("Long rope", "nylon")
+# part_1 = Part("Deck", "wood")
+# print(part_1)
+# part_2 = Part("Sail", "cloth")
+# part_3 = Part("Long rope", "nylon")
 
-ship_1 = Ship({"1" : part_1, "2" : part_2})
-ship_1.display_state()
+# ship_1 = Ship({"1" : part_1, "2" : part_2})
+# ship_1.display_state()
 
-ship_1.replace_part("Deck", part_3)
-ship_1.display_state()
+# ship_1.replace_part("Deck", part_3)
+# ship_1.display_state()
 
-ship_1.change_part("Sail", "stronger, thicker cloth")
-ship_1.display_state()
+# ship_1.change_part("Sail", "stronger, thicker cloth")
+# ship_1.display_state()
 
-racing_ship_part_1 = Part ("Massive 2000 horsepower gasoline motor", "plastic and metal")
-racing_ship_1 = RacingShip({"1" : part_1, "2": racing_ship_part_1}, 100)
+# racing_ship_part_1 = Part ("Massive 2000 horsepower gasoline motor", "plastic and metal")
+# racing_ship_1 = RacingShip({"1" : part_1, "2": racing_ship_part_1}, 100)
 
-racing_ship_1.display_state()
+# racing_ship_1.display_state()
+
+lets_make_a_ship = CustomizeShip()
