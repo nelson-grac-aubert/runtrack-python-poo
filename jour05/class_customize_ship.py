@@ -8,7 +8,7 @@ class CustomizeShip() :
 
     def create_part(self) : 
         """ Return a new part made with the characteristics given by user inputs """
-        print("\nLet's add a part to your boat :)")
+        print("\nLet's add a part to your ship :)")
 
         time.sleep(2)
         while True : 
@@ -30,16 +30,20 @@ class CustomizeShip() :
         print(f"\n Ok, so we're making a {name} made of {material}")
         return Part(name, material)
 
-    def start_your_boat(self): 
+    def add_part_to_ship(self, new_part) : 
+        pass
+        
+
+    def start_your_ship(self): 
         print("\nLet's start your ship with just one part for now :)")
 
         self.__ship = Ship({"1":self.create_part()})
 
-    def check_boat_state(self): 
+    def check_ship_state(self): 
         self.__ship.display_state()
 
     def game_loop(self): 
         
-        self.start_your_boat()
+        self.start_your_ship()
         time.sleep(2)
-        self.check_boat_state()
+        self.check_ship_state()

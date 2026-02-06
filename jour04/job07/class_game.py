@@ -16,6 +16,7 @@ class Game() :
         self.player_stopped_playing = False
         print("\nA game has been started and will start soon, have fun :)")
         time.sleep(2)
+        self.loop()
 
 
     def first_deals(self): 
@@ -67,8 +68,10 @@ class Game() :
         else : 
             if self.player.get_score() > self.dealer.get_score() : 
                 print(f"You won {self.player.get_score()} to {self.dealer.get_score()}! :)")
-            else : 
+            elif self.player.get_score() < self.dealer.get_score() : 
                 print(f"You lost {self.dealer.get_score()} to {self.player.get_score()} :(")
+            else : 
+                print(f"It's a draw! {self.player.get_score()} on each part")
         
 
     def loop(self): 

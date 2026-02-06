@@ -40,7 +40,7 @@ class Deck:
     
         # Display 
         if type(player) == Human : 
-            print(f"\nThe player has been dealt a {choice}")
+            print(f"\nThe player has been dealt {choice}")
             print(f"The player's score is now {player.get_score()} points")
         else : 
             print("\nThe dealer has been dealt a card")

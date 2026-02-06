@@ -34,7 +34,7 @@
 from class_part import Part
 from class_ship import Ship
 from class_racing_ship import RacingShip
-from class_customize_boat import CustomizeShip
+from class_customize_ship import CustomizeShip
 
 # part_1 = Part("Deck", "wood")
 # print(part_1)
