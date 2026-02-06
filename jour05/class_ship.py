@@ -29,7 +29,7 @@ class Ship:
         for key in self.get_parts():
             if self.get_parts()[key].get_name() == part_name : 
                 self.get_parts()[key].set_material(new_material)
-                print(f"{self.get_parts()[key].get_name()} is now made of {new_material}")
+                print(f"{part_name} is now made of {new_material}")
 
 
 
