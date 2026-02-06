@@ -6,19 +6,34 @@ class Ship:
     
     def get_parts(self):
         return self.__parts
-    def set_parts(self, new_parts):
+    def set_parts(self, new_parts : dict):
         self.__parts = new_parts
 
     def add_part(self, new_part : Part): 
+        """
+        Add a new part to the ship that is self
+
+        :param new_part: The Part you want to add to your ship
+        :type new_part: Part
+        """
         self.get_parts()[str(len(self.get_parts())+1)] = new_part
 
     def display_state(self): 
+        """ Print a human friendly recap of all parts on the ship """
+
         print("\n ----- Current state of the boat -----")
         for key in self.get_parts() : 
             print(self.get_parts()[key])
 
     def replace_part(self, replaced_part_name : str, new_part : Part):
-        """ Replace a part with a brand new one """
+        """
+        Replace a part (chosen by it's name attribute) by a new one.
+        
+        :param replaced_part_name: Name attribute of the place you want to replace
+        :type replaced_part_name: str
+        :param new_part: Part object that will replace the named one
+        :type new_part: Part
+        """
         for key in self.get_parts(): 
             if self.get_parts()[key].get_name() == replaced_part_name :
                 old_part = self.get_parts()[key] 
@@ -26,7 +41,14 @@ class Ship:
                 print(f"{old_part} has been replaced by {new_part}")
     
     def change_part(self, part_name : str, new_material : str): 
-        """ Pick a current ship piece by its name and change its material """
+        """
+        Replace a part's (chosen by it's name attribute) material.
+        
+        :param part_name: Name attribute of the part whose material you want to change
+        :type part_name: str
+        :param new_material: New material for that part
+        :type new_material: str
+        """
         for key in self.get_parts():
             if self.get_parts()[key].get_name() == part_name : 
                 self.get_parts()[key].set_material(new_material)
