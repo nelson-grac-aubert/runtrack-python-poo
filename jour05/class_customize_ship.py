@@ -51,6 +51,22 @@ class CustomizeShip() :
 
         self.get_ship().replace_part(name, new_part)
 
+    def modify_part_material(self):
+        print("\nLet's modify an existing part's material :)")
+        time.sleep(2)
+
+        print(f"\nEnter the valid name of the part you want to replace")
+        time.sleep(1)
+        name = self.get_user_string("name")
+        time.sleep(2)
+
+        print(f"\nEnter a name for the new material of {name}")
+        time.sleep(1)
+        material = self.get_user_string("material")
+        time.sleep(2)
+
+        self.get_ship().change_part(name, material)
+
     def add_part_to_ship(self) : 
         new_part = self.create_part()
         self.get_ship().add_part(new_part)
@@ -85,12 +101,15 @@ class CustomizeShip() :
 
         while True : 
             choice = self.get_user_choice()
-            if choice == "1" : 
-                self.add_part_to_ship()
-            if choice == "2" : 
-                self.replace_part()
-            elif choice == "4" : 
-                self.check_ship_state()
+            match choice :
+                case "1" :
+                    self.add_part_to_ship()
+                case "2" : 
+                    self.replace_part()
+                case "3" : 
+                    self.modify_part_material()
+                case "4" : 
+                    self.check_ship_state()
 
             time.sleep(2)
                 
